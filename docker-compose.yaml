@@ -24,7 +24,10 @@ services:
             MYSQL_ROOT_PASSWORD: secret
             MYSQL_USER: user    
             MYSQL_PASSWORD: secret
-            MYSQL_DATABASE: social-media                
+            MYSQL_DATABASE: social-media  
+
+    cache:  
+        image: redis:latest            
 
 volumes:
     mysqldata:
