@@ -12,8 +12,8 @@ class Core
   public function run()
   {
     $url = '/';
-    isset($_SERVER['REQUEST_URI']) && $_SERVER['REQUEST_URI'] != '/' ? $url .= $_SERVER['REQUEST_URI'] : '';
-
+    $uri = ltrim($_SERVER['REQUEST_URI'], '/');
+    isset($uri) && $uri != '/' ? $url .= $uri : '';
     ($url != '/') ? $url = rtrim($url, '/') : $url;
 
     $routerFound = false;
