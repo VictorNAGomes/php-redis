@@ -11,7 +11,7 @@ services:
             dockerfile: ./php/Dockerfile
         volumes:
             - /var/www/html/vendor
-            - ./app:/var/www/html
+            - ./app:/app
 
     db:
         image: mysql:8.3.0
@@ -21,10 +21,9 @@ services:
             - "3306:3306"
         restart: unless-stopped
         environment:
-            MYSQL_ROOT_PASSWORD: secret
-            MYSQL_USER: user    
+            MYSQL_ROOT_PASSWORD: secret    
             MYSQL_PASSWORD: secret
-            MYSQL_DATABASE: social-media  
+            MYSQL_DATABASE: blog  
 
     cache:  
         image: redis:latest            
