@@ -18,7 +18,7 @@
       <div class="card-body">
         <h5 class="card-title"><?= $post['title'] ?></h5>
         <p class="card-text"><?= $post['descricao'] ?></p>
-        <a href="#" class="btn btn-primary">Visualizar Post</a>
+        <a href="post/<?= $post['id'] ?>" class="btn btn-primary">Visualizar Post</a>
       </div>
     </div>
   <?php

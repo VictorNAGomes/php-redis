@@ -45,4 +45,18 @@ class PostController extends RenderView
       }
     }
   }
+  public function getOne($id)
+  {
+    $post = new PostModel();
+
+    $postResult = $post->getOne($id[0])[0];
+
+    $this->loadView('pages/partials/header', [
+      "title" => "Home"
+    ]);
+    $this->loadView('pages/post', [
+      "post" => $postResult
+    ]);
+    $this->loadView('pages/partials/footer', []);
+  }
 }

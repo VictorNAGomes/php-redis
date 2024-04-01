@@ -40,4 +40,20 @@ class PostModel extends Database
       return false;
     }
   }
+
+  public function getOne($id)
+  {
+    try {
+      $stm = $this->pdo->prepare("SELECT * FROM posts WHERE id = ?;");
+      $stm->execute([$id]);
+
+      if ($stm->rowCount() > 0) {
+        return $stm->fetchAll(PDO::FETCH_ASSOC);
+      } else {
+        return false;
+      }
+    } catch (PDOException $e) {
+      return false;
+    }
+  }
 }
