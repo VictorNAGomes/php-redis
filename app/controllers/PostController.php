@@ -47,9 +47,19 @@ class PostController extends RenderView
   }
   public function getOne($id)
   {
-    $post = new PostModel();
+    $redis = new Redis();
+    $redis->connect('cache', 6379);
 
-    $postResult = $post->getOne($id[0])[0];
+    $postFromCache = $redis->get('post-' . $id[0]);
+
+    if ($postFromCache != '') {
+      $postResult = (array)json_decode($postFromCache);
+    } else {
+      $post = new PostModel();
+
+      $postResult = $post->getOne($id[0])[0];
+      $redis->set('post-' . $id[0], json_encode($postResult), 10);
+    }
 
     $this->loadView('pages/partials/header', [
       "title" => "Home"
