@@ -2,5 +2,6 @@
 
 $routes = [
   '/' => 'HomeController@index',
-  '/criar-post' => 'HomeController@createPost',
+  '/criar-post' => 'PostController@createPost',
+  '/criar-post-persistence' => 'PostController@createPostPersistence',
 ];

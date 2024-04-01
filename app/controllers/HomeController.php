@@ -16,13 +16,4 @@ class HomeController extends RenderView
     $this->loadView('pages/home', []);
     $this->loadView('pages/partials/footer', []);
   }
-
-  public function createPost()
-  {
-    $this->loadView('pages/partials/header', [
-      "title" => "Home"
-    ]);
-    $this->loadView('pages/createPost', []);
-    $this->loadView('pages/partials/footer', []);
-  }
 }

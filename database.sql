@@ -7,6 +7,6 @@ create table if not exists posts (
   title varchar(100) not null,
   descricao varchar(255) not null,
   conteudo text not null,
-  img varchar(255) not null,
+  img varchar(255),
   status int default 0
 );
