@@ -29,7 +29,7 @@ class PostModel extends Database
   public function getAll()
   {
     try {
-      $stm = $this->pdo->query("SELECT * FROM posts;");
+      $stm = $this->pdo->query("SELECT * FROM posts ORDER BY id DESC;");
 
       if ($stm->rowCount() > 0) {
         return $stm->fetchAll(PDO::FETCH_ASSOC);
