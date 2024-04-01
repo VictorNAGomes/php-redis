@@ -10,10 +10,16 @@ class HomeController extends RenderView
 
   public function index()
   {
+    $post = new PostModel();
+
+    $posts = $post->getAll();
+
     $this->loadView('pages/partials/header', [
       "title" => "Home"
     ]);
-    $this->loadView('pages/home', []);
+    $this->loadView('pages/home', [
+      "posts" => $posts
+    ]);
     $this->loadView('pages/partials/footer', []);
   }
 }

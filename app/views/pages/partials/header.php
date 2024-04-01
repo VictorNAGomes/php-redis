@@ -33,3 +33,26 @@
       </div>
     </div>
   </nav>
+  <!-- 
+  <?php
+  if (isset($_GET['error'])) {
+  ?>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <?= $_GET['error'] ?>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  <?php
+  }
+  if (isset($_GET['success'])) {
+  ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <?= $_GET['success'] ?>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  <?php
+  }
+  ?> -->
