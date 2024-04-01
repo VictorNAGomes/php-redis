@@ -55,10 +55,11 @@ class PostController extends RenderView
     if ($postFromCache != '') {
       $postResult = (array)json_decode($postFromCache);
     } else {
+      sleep(3);
       $post = new PostModel();
 
       $postResult = $post->getOne($id[0])[0];
-      $redis->set('post-' . $id[0], json_encode($postResult), 10);
+      $redis->set('post-' . $id[0], json_encode($postResult), 30);
     }
 
     $this->loadView('pages/partials/header', [
