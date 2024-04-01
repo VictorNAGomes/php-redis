@@ -21,7 +21,7 @@ Para executar este projeto localmente, siga estas etapas:
 1. Clone este repositório para o seu ambiente local.
 2. Navegue até o diretório raiz do projeto.
 3. Execute o comando `docker compose up` para construir e iniciar os containers da aplicação.
-4. Após os containers estarem funcionando, acesse o host http://localhost:3306 para se conectar ao servidor MySQL localmente, utilizando o usuário root e a senha secret. Em seguida, importe o arquivo database.sql. Isso criará o banco de dados necessário para a aplicação.
+4. Após os containers estarem funcionando, acesse o host http://localhost:3306 para se conectar ao servidor MySQL localmente, utilizando o usuário `root` e a senha `secret`. Em seguida, importe o arquivo database.sql. Isso criará o banco de dados necessário para a aplicação.
 5. Acesse a aplicação em seu navegador através do endereço `http://localhost`.
 
 Certifique-se de ter as portas necessárias abertas em seu ambiente local para acessar a aplicação.
